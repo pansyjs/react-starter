@@ -8,6 +8,7 @@ const analyze = process.env.ANALYZE;
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: '/vite-react-starter/',
   css: {
     preprocessorOptions: {
       less: {

@@ -6,9 +6,11 @@ import { visualizer } from 'rollup-plugin-visualizer'
 
 const analyze = process.env.ANALYZE;
 
+const isProd = process.env.NODE_ENV === 'production';
+
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/vite-react-starter/',
+  base: isProd ? '/vite-react-starter/' : '/',
   css: {
     preprocessorOptions: {
       less: {
@@ -33,5 +35,15 @@ export default defineConfig({
       open: true,
     }),
     tsconfigPaths(),
-  ].filter(Boolean),
+  ],
+  build: {
+    rollupOptions: {
+      output: {
+        // Static resource classification and packaging
+        chunkFileNames: "assets/js/[name]-[hash].js",
+        entryFileNames: "assets/js/[name]-[hash].js",
+        assetFileNames: "assets/[ext]/[name]-[hash].[ext]"
+      }
+    }
+  },
 })

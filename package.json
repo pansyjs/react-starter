@@ -8,6 +8,7 @@
     "start": "vite",
     "dev": "vite",
     "predeploy": "pnpm run build",
+    "prepreview": "pnpm run build",
     "build": "tsc && vite build",
     "deploy": "gh-pages -d dist -b gh-pages -f",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",

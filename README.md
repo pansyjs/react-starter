@@ -3,7 +3,8 @@ Vite React Starter
 </h1>
 
 ![deploy CI][deploy-ci]
-[![license][license-mit]][repository]
+[![license][license-img]][license-url]
+[![issues][issues-img]][issues-url]
 
 ## 相关命令
 
@@ -24,6 +25,8 @@ pnpm preview
 pnpm tsc
 ```
 
-[repository]: https://github.com/pansyjs/vite-react-starter
-[license-mit]: https://badgen.net/badge/license/MIT/blue
+[license-img]: https://badgen.net/badge/license/MIT/blue
+[license-url]: https://github.com/pansyjs/vite-react-starter/blob/main/LICENSE
+[issues-img]: https://img.shields.io/github/issues/pansyjs/smart-captcha
+[issues-url]: https://github.com/pansyjs/smart-captcha/issues
 [deploy-ci]: https://github.com/pansyjs/vite-react-starter/workflows/Deploy/badge.svg

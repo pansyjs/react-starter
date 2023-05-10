@@ -5,6 +5,9 @@ Vite React Starter
 ![deploy CI][deploy-ci]
 [![license][license-img]][license-url]
 [![issues][issues-img]][issues-url]
+[![issues][issues-img]][issues-url]
+[![Percentage of issues still open][percentage-issues-img]][percentage-issues-url]
+
 
 ## 相关命令
 
@@ -27,6 +30,8 @@ pnpm tsc
 
 [license-img]: https://badgen.net/badge/license/MIT/blue
 [license-url]: https://github.com/pansyjs/vite-react-starter/blob/main/LICENSE
-[issues-img]: https://img.shields.io/github/issues/pansyjs/smart-captcha
-[issues-url]: https://github.com/pansyjs/smart-captcha/issues
+[issues-img]: https://img.shields.io/github/issues/pansyjs/vite-react-starter
+[issues-url]: https://github.com/pansyjs/vite-react-starter/issues
+[percentage-issues-img]: http://isitmaintained.com/badge/open/pansyjs/vite-react-starter.svg
+[percentage-issues-url]: http://isitmaintained.com/project/pansyjs/vite-react-starter 'Percentage of issues still open'
 [deploy-ci]: https://github.com/pansyjs/vite-react-starter/workflows/Deploy/badge.svg

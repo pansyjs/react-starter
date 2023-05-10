@@ -13,6 +13,9 @@ dependencies:
   '@pansy/react-amap':
     specifier: ^2.15.5
     version: 2.15.5(react@18.2.0)
+  '@pansy/smart-captcha':
+    specifier: ^2.1.0
+    version: 2.1.0(react@18.2.0)
   '@tanstack/react-query':
     specifier: ^4.29.5
     version: 4.29.5(react-dom@18.2.0)(react@18.2.0)
@@ -1085,6 +1088,23 @@ packages:
       '@pansy/use-portal': 0.2.1(react@18.2.0)
     transitivePeerDependencies:
       - react
+    dev: false
+
+  /@pansy/smart-captcha@2.1.0(react@18.2.0):
+    resolution: {integrity: sha512-ocI5Fp8CU3kmVNUWmMFUc6tP0fAWthLaVSB6s1mWFt3sQmSPxh6GGcpryeenhrT8q77248QUzZ6fXiKM9v59zA==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+    dependencies:
+      '@pansy/use-external': 0.1.5(react@18.2.0)
+      react: 18.2.0
+    dev: false
+
+  /@pansy/use-external@0.1.5(react@18.2.0):
+    resolution: {integrity: sha512-tdSeoNWbOEfSVBFNX/GyO9gOVKHmEa0v2lB8PztsDk9squZpdV5JHUZQQm7fN/L/9br2wvCRmZr6Sq63OxV4bg==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+    dependencies:
+      react: 18.2.0
     dev: false
 
   /@pansy/use-portal@0.2.1(react@18.2.0):

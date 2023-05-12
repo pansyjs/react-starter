@@ -5,7 +5,6 @@ Vite React Starter
 ![deploy CI][deploy-ci]
 [![license][license-img]][license-url]
 [![issues][issues-img]][issues-url]
-[![issues][issues-img]][issues-url]
 [![Percentage of issues still open][percentage-issues-img]][percentage-issues-url]
 
 

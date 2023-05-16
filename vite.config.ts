@@ -2,6 +2,7 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import tsconfigPaths from 'vite-tsconfig-paths'
 import { visualizer } from 'rollup-plugin-visualizer'
+import { createHtmlPlugin } from 'vite-plugin-html'
 
 const analyze = process.env.ANALYZE;
 
@@ -31,6 +32,13 @@ export default defineConfig({
       open: true,
     }),
     tsconfigPaths(),
+    createHtmlPlugin({
+      inject: {
+        data: {
+          title: 'Vite React Starter'
+        }
+      }
+    }),
   ],
   build: {
     rollupOptions: {

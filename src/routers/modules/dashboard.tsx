@@ -5,11 +5,11 @@ import type { RouteObject } from '../types';
 // dashboard 模块
 const dashboardRouter: Array<RouteObject> = [
   {
-    path: '/map',
-    element: lazyLoad(React.lazy(() => import('@/pages/map'))),
+    path: '/dashboard',
+    element: lazyLoad(React.lazy(() => import('@/pages/dashboard'))),
     meta: {
-      title: "全景地图",
-      key: "map"
+      title: "概览",
+      key: "dashboard"
     }
   },
 ];

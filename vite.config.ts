@@ -64,6 +64,9 @@ export default defineConfig({
     }),
     reactVirtualized(),
   ],
+  esbuild: {
+    drop: ["console", "debugger"],
+  },
   build: {
     rollupOptions: {
       output: {

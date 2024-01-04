@@ -3,10 +3,10 @@ import { join } from 'node:path';
 import { createRequire } from 'node:module';
 import { readFileSync, writeFileSync } from 'node:fs';
 import { defineConfig, type PluginOption } from 'vite'
+import Unocss from 'unocss/vite'
 import react from '@vitejs/plugin-react'
 import tsconfigPaths from 'vite-tsconfig-paths'
 import { visualizer } from 'rollup-plugin-visualizer'
-import { createHtmlPlugin } from 'vite-plugin-html'
 
 const analyze = process.env.ANALYZE;
 const isProd = process.env.NODE_ENV === 'production';
@@ -53,15 +53,9 @@ export default defineConfig({
       brotliSize: true,
       emitFile: false,
       open: true,
-    }),
+    }) as any,
+    Unocss(),
     tsconfigPaths(),
-    createHtmlPlugin({
-      inject: {
-        data: {
-          title: 'Vite React Starter'
-        }
-      }
-    }),
     reactVirtualized(),
   ],
   esbuild: {

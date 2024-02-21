@@ -30,9 +30,6 @@ export default defineConfig({
     tsconfigPaths(),
     virtualized(),
   ],
-  esbuild: {
-    drop: ["console", "debugger"],
-  },
   build: {
     rollupOptions: {
       output: {

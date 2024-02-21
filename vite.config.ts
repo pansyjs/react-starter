@@ -6,38 +6,39 @@ import tsconfigPaths from 'vite-tsconfig-paths'
 import { visualizer } from 'rollup-plugin-visualizer'
 
 const analyze = process.env.ANALYZE;
-const isProd = process.env.NODE_ENV === 'production';
 
 // https://vitejs.dev/config/
-export default defineConfig({
-  base: isProd ? '/vite-react-starter/' : '/',
-  css: {
-    preprocessorOptions: {
-      less: {
-        javascriptEnabled: true,
+export default defineConfig(({ command }) => {
+  return {
+    base: command === 'build' ? '/vite-react-starter/' : '/',
+    css: {
+      preprocessorOptions: {
+        less: {
+          javascriptEnabled: true,
+        },
       },
     },
-  },
-  plugins: [
-    react(),
-    analyze && visualizer({
-      gzipSize: true,
-      brotliSize: true,
-      emitFile: false,
-      open: true,
-    }) as any,
-    Unocss(),
-    tsconfigPaths(),
-    virtualized(),
-  ],
-  build: {
-    rollupOptions: {
-      output: {
-        // Static resource classification and packaging
-        chunkFileNames: "assets/js/[name]-[hash].js",
-        entryFileNames: "assets/js/[name]-[hash].js",
-        assetFileNames: "assets/[ext]/[name]-[hash].[ext]"
+    plugins: [
+      react(),
+      analyze && visualizer({
+        gzipSize: true,
+        brotliSize: true,
+        emitFile: false,
+        open: true,
+      }) as any,
+      Unocss(),
+      tsconfigPaths(),
+      virtualized(),
+    ],
+    build: {
+      rollupOptions: {
+        output: {
+          // Static resource classification and packaging
+          chunkFileNames: "assets/js/[name]-[hash].js",
+          entryFileNames: "assets/js/[name]-[hash].js",
+          assetFileNames: "assets/[ext]/[name]-[hash].[ext]"
+        }
       }
-    }
-  },
+    },
+  }
 })

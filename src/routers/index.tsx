@@ -1,10 +1,12 @@
-import { useRoutes, Navigate } from 'react-router-dom';
+import React from 'react';
+import { CSSTransition, TransitionGroup } from 'react-transition-group'
+import { useNProgress } from '@rcuse/integrations';
+import { useRoutes, useLocation, Navigate } from 'react-router-dom';
 import Login from '@/pages/login';
 import { BasicLayout } from '@/layouts/BasicLayout';
+import { LazyLoad } from './LazyLoad';
 
 import type { RouteObject } from './types';
-import lazyLoad from "@/routers/LazyLoad.tsx";
-import React from "react";
 
 // * 导入所有router
 const metaRouters: Record<string, RouteObject[]> = import.meta.glob(
@@ -25,6 +27,14 @@ export const rootRouter: RouteObject[] = [
     element: <BasicLayout />,
     children: [
       ...routerArray,
+      {
+        path: '/map',
+        element: LazyLoad(React.lazy(() => import('@/pages/map'))),
+        meta: {
+          title: "全景地图",
+          key: "map"
+        }
+      },
     ],
   },
   {
@@ -39,18 +49,29 @@ export const rootRouter: RouteObject[] = [
       title: '登录页',
     }
   },
-  {
-    path: '/map',
-    element: lazyLoad(React.lazy(() => import('@/pages/map'))),
-    meta: {
-      title: "全景地图",
-      key: "map"
-    }
-  },
 ];
 
 const Router = () => {
-  return useRoutes(rootRouter);
+  const location = useLocation();
+  const { start, done } = useNProgress();
+
+  return (
+    <TransitionGroup>
+      <CSSTransition
+        classNames="fade"
+        key={location.key}
+        onEnter={() => {
+          start();
+        }}
+        onEntered={() => {
+          done()
+        }}
+        timeout={1200}
+      >
+        {useRoutes(rootRouter)}
+      </CSSTransition>
+    </TransitionGroup>
+  )
 };
 
 export default Router;

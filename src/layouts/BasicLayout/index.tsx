@@ -1,13 +1,10 @@
 import React from 'react';
 import { Dropdown } from 'antd';
 import {
-  ChromeFilled,
-  CrownFilled,
   SmileFilled,
-  TabletFilled,
   LogoutOutlined,
 } from '@ant-design/icons';
-import { useOutlet, useLocation } from 'react-router-dom';
+import { useOutlet, useLocation, useNavigate } from 'react-router-dom';
 import { ProLayout } from '@ant-design/pro-components';
 
 const routes =  [
@@ -17,87 +14,16 @@ const routes =  [
     icon: <SmileFilled />,
   },
   {
-    path: '/admin',
-    name: '管理页',
-    icon: <CrownFilled />,
-    access: 'canAdmin',
-    component: './Admin',
-    routes: [
-      {
-        path: '/admin/sub-page1',
-        name: '一级页面',
-        icon: 'https://gw.alipayobjects.com/zos/antfincdn/upvrAjAPQX/Logo_Tech%252520UI.svg',
-        component: './Welcome',
-      },
-      {
-        path: '/admin/sub-page2',
-        name: '二级页面',
-        icon: <CrownFilled />,
-        component: './Welcome',
-      },
-      {
-        path: '/admin/sub-page3',
-        name: '三级页面',
-        icon: <CrownFilled />,
-        component: './Welcome',
-      },
-    ],
-  },
-  {
-    name: '列表页',
-    icon: <TabletFilled />,
-    path: '/list',
-    component: './ListTableList',
-    routes: [
-      {
-        path: '/list/sub-page',
-        name: '列表页面',
-        icon: <CrownFilled />,
-        routes: [
-          {
-            path: 'sub-sub-page1',
-            name: '一一级列表页面',
-            icon: <CrownFilled />,
-            component: './Welcome',
-          },
-          {
-            path: 'sub-sub-page2',
-            name: '一二级列表页面',
-            icon: <CrownFilled />,
-            component: './Welcome',
-          },
-          {
-            path: 'sub-sub-page3',
-            name: '一三级列表页面',
-            icon: <CrownFilled />,
-            component: './Welcome',
-          },
-        ],
-      },
-      {
-        path: '/list/sub-page2',
-        name: '二级列表页面',
-        icon: <CrownFilled />,
-        component: './Welcome',
-      },
-      {
-        path: '/list/sub-page3',
-        name: '三级列表页面',
-        icon: <CrownFilled />,
-        component: './Welcome',
-      },
-    ],
-  },
-  {
-    path: 'https://ant.design',
-    name: 'Ant Design 官网外链',
-    icon: <ChromeFilled />,
+    path: '/map',
+    name: '地图',
+    icon: <SmileFilled />,
   },
 ];
 
 export const BasicLayout: React.FC = () => {
   const outlet = useOutlet();
   const location = useLocation();
+  const navigate = useNavigate();
 
   return (
     <ProLayout
@@ -126,9 +52,6 @@ export const BasicLayout: React.FC = () => {
       ]}
       location={location}
       siderMenuType="group"
-      menu={{
-        collapsedShowGroupTitle: true,
-      }}
       fixSiderbar={true}
       layout="mix"
       avatarProps={{
@@ -153,7 +76,11 @@ export const BasicLayout: React.FC = () => {
           );
         },
       }}
-      onMenuHeaderClick={(e: any) => console.log(e)}
+      menuProps={{
+        onClick: (info: any) => {
+          navigate(info.key);
+        }
+      }}
       route={{
         path: '/',
         routes,

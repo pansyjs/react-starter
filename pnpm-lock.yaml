@@ -142,6 +142,9 @@ devDependencies:
   vite-plugin-pwa:
     specifier: ^0.19.0
     version: 0.19.0(vite@5.1.3)(workbox-build@7.0.0)(workbox-window@7.0.0)
+  vite-plugin-react-virtualized:
+    specifier: ^1.0.4
+    version: 1.0.4(vite@5.1.3)
   vite-tsconfig-paths:
     specifier: ^4.3.1
     version: 4.3.1(typescript@5.3.3)(vite@5.1.3)
@@ -8668,6 +8671,14 @@ packages:
       workbox-window: 7.0.0
     transitivePeerDependencies:
       - supports-color
+    dev: true
+
+  /vite-plugin-react-virtualized@1.0.4(vite@5.1.3):
+    resolution: {integrity: sha512-fxZwR2oj1/k2voCqQDkHVMXClGTB7vmsLAY9D52ON61IXz36/vXTZUPMmpucI2K3rgyRfZUSbC26Vg7PbSwsGw==}
+    peerDependencies:
+      vite: ^4
+    dependencies:
+      vite: 5.1.3(@types/node@20.1.0)(less@4.1.3)
     dev: true
 
   /vite-tsconfig-paths@4.3.1(typescript@5.3.3)(vite@5.1.3):

@@ -3,3 +3,21 @@
     display: none !important;
   }
 }
+
+.fade-enter {
+  opacity: 0;
+  transition: opacity 500ms ease-out;
+}
+
+.fade-enter-active {
+  opacity: 1;
+}
+
+.fade-exit {
+  opacity: 1;
+}
+
+.fade-exit-active {
+  opacity: 0;
+  transition: opacity 500ms ease-in;
+}

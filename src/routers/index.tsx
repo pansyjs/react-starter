@@ -66,7 +66,8 @@ const Router = () => {
         onEntered={() => {
           done()
         }}
-        timeout={1200}
+        appear
+        timeout={500}
       >
         {useRoutes(rootRouter)}
       </CSSTransition>

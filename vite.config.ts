@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite'
 import Unocss from 'unocss/vite'
+import { vitePluginForArco } from '@arco-plugins/vite-react'
 import { virtualized } from 'vite-plugin-react-virtualized';
 import react from '@vitejs/plugin-react'
 import tsconfigPaths from 'vite-tsconfig-paths'
@@ -20,6 +21,7 @@ export default defineConfig(({ command }) => {
     },
     plugins: [
       react(),
+      vitePluginForArco({ }),
       analyze && visualizer({
         gzipSize: true,
         brotliSize: true,

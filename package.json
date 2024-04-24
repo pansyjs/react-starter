@@ -17,6 +17,7 @@
   "dependencies": {
     "@ant-design/icons": "^5.0.1",
     "@ant-design/pro-components": "^2.4.14",
+    "@arco-design/web-react": "^2.61.3",
     "@pansy/react-amap": "^2.20.1",
     "@pansy/react-mapbox-gl": "^1.8.1",
     "@pansy/smart-captcha": "^2.1.2",

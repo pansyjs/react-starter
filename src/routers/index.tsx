@@ -1,6 +1,6 @@
 import React from 'react';
 import { CSSTransition, TransitionGroup } from 'react-transition-group'
-import { useNProgress } from '@rcuse/integrations';
+import { useNProgress } from '@rcuse/integrations/useNProgress';
 import { useRoutes, useLocation, Navigate } from 'react-router-dom';
 import Login from '@/pages/login';
 import { BasicLayout } from '@/layouts/BasicLayout';

@@ -1,12 +1,15 @@
 import { defineConfig } from 'vite'
 import Unocss from 'unocss/vite'
+import { resolve } from 'node:path';
 import { vitePluginForArco } from '@arco-plugins/vite-react'
 import { virtualized } from 'vite-plugin-react-virtualized';
 import react from '@vitejs/plugin-react'
-import tsconfigPaths from 'vite-tsconfig-paths'
 import { visualizer } from 'rollup-plugin-visualizer'
 
 const analyze = process.env.ANALYZE;
+
+const root = process.cwd();
+const pathResolve = (pathname: string) => resolve(root, '.', pathname);
 
 // https://vitejs.dev/config/
 export default defineConfig(({ command }) => {
@@ -19,6 +22,14 @@ export default defineConfig(({ command }) => {
         },
       },
     },
+    resolve: {
+      alias: [
+        {
+          find: /@\//,
+          replacement: pathResolve('src') + '/',
+        },
+      ],
+    },
     plugins: [
       react(),
       vitePluginForArco({ }),
@@ -29,7 +40,6 @@ export default defineConfig(({ command }) => {
         open: true,
       }) as any,
       Unocss(),
-      tsconfigPaths(),
       virtualized(),
     ],
     build: {

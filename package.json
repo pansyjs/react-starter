@@ -29,6 +29,7 @@
   },
   "dependencies": {
     "@arco-design/web-react": "^2.62.0",
+    "@pansy/classnames": "^1.0.1",
     "@pansy/react-amap": "^2.20.1",
     "@pansy/react-mapbox-gl": "^1.8.1",
     "@rcuse/core": "^0.16.0",
@@ -89,7 +90,6 @@
     "vite-plugin-pages": "^0.32.1",
     "vite-plugin-pwa": "^0.20.0",
     "vite-plugin-react-virtualized": "^1.0.4",
-    "vite-tsconfig-paths": "^4.3.2",
     "vitest": "^1.6.0"
   },
   "lint-staged": {

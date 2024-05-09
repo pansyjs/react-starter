@@ -1,7 +1,5 @@
 import React from 'react';
-import { CSSTransition, TransitionGroup } from 'react-transition-group'
-import { useNProgress } from '@rcuse/integrations/useNProgress';
-import { useRoutes, useLocation, Navigate } from 'react-router-dom';
+import { useRoutes, Navigate } from 'react-router-dom';
 import Login from '@/pages/login';
 import { BasicLayout } from '@/layouts/BasicLayout';
 import { LazyLoad } from './LazyLoad';
@@ -52,26 +50,10 @@ export const rootRouter: RouteObject[] = [
 ];
 
 const Router = () => {
-  const location = useLocation();
-  const { start, done } = useNProgress();
-
   return (
-    <TransitionGroup>
-      <CSSTransition
-        classNames="fade"
-        key={location.key}
-        onEnter={() => {
-          start();
-        }}
-        onEntered={() => {
-          done()
-        }}
-        appear
-        timeout={500}
-      >
-        {useRoutes(rootRouter)}
-      </CSSTransition>
-    </TransitionGroup>
+    <>
+      {useRoutes(rootRouter)}
+    </>
   )
 };
 

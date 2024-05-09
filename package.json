@@ -1,8 +1,12 @@
 {
   "name": "react-starter",
-  "private": true,
-  "version": "1.0.0",
   "type": "module",
+  "version": "1.0.0",
+  "private": true,
+  "packageManager": "pnpm@8.15.8",
+  "engines": {
+    "node": "^18.0.0 || >=20.0.0"
+  },
   "scripts": {
     "bootstrap": "pnpm install",
     "analyze": "cross-env ANALYZE=1 vite build",
@@ -12,7 +16,11 @@
     "prepreview": "pnpm run build",
     "build": "tsc && vite build",
     "deploy": "gh-pages -d dist -b gh-pages -f",
-    "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "test": "vitest",
+    "test:cov": "vitest run --coverage",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint --cache .",
+    "lint:fix": "nr lint --fix",
     "reinstall": "rimraf pnpm-lock.yaml && rimraf package.lock.json && rimraf node_modules && npm run bootstrap",
     "preinstall": "npx only-allow pnpm",
     "preview": "vite preview",
@@ -68,12 +76,12 @@
     "postcss": "^8.4.38",
     "prettier": "^3.2.5",
     "rimraf": "^5.0.5",
+    "rollup-plugin-visualizer": "^5.12.0",
     "stylelint": "^16.5.0",
     "stylelint-config-property-sort-order-smacss": "^10.0.0",
     "stylelint-config-standard": "^36.0.0",
     "stylelint-order": "^6.0.4",
     "stylelint-prettier": "^5.0.0",
-    "rollup-plugin-visualizer": "^5.12.0",
     "typescript": "^5.4.5",
     "unocss": "^0.60.0",
     "vite": "^5.2.11",
@@ -84,7 +92,6 @@
     "vite-tsconfig-paths": "^4.3.2",
     "vitest": "^1.6.0"
   },
-  "packageManager": "pnpm@8.15.8",
   "lint-staged": {
     "*.{ts,tsx}": [
       "eslint --cache --fix"

@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
+    "bootstrap": "pnpm install",
     "analyze": "cross-env ANALYZE=1 vite build",
     "start": "vite",
     "dev": "vite",
@@ -12,6 +13,8 @@
     "build": "tsc && vite build",
     "deploy": "gh-pages -d dist -b gh-pages -f",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "reinstall": "rimraf pnpm-lock.yaml && rimraf package.lock.json && rimraf node_modules && npm run bootstrap",
+    "preinstall": "npx only-allow pnpm",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -58,18 +61,18 @@
     "gh-pages": "^6.1.1",
     "https-localhost": "^4.7.1",
     "less": "^4.2.0",
-    "pnpm": "^8.15.3",
-    "postcss": "^8.4.23",
-    "rollup-plugin-visualizer": "^5.9.0",
-    "typescript": "^5.3.3",
-    "unocss": "^0.59.4",
-    "vite": "^5.2.10",
+    "pnpm": "^8.15.8",
+    "postcss": "^8.4.38",
+    "rollup-plugin-visualizer": "^5.12.0",
+    "typescript": "^5.4.5",
+    "unocss": "^0.60.0",
+    "vite": "^5.2.11",
     "vite-bundle-visualizer": "^1.1.0",
     "vite-plugin-pages": "^0.32.1",
-    "vite-plugin-pwa": "^0.19.8",
+    "vite-plugin-pwa": "^0.20.0",
     "vite-plugin-react-virtualized": "^1.0.4",
     "vite-tsconfig-paths": "^4.3.2",
-    "vitest": "^1.5.0"
+    "vitest": "^1.6.0"
   },
   "packageManager": "pnpm@8.15.3"
 }

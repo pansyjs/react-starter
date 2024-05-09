@@ -1,10 +1,11 @@
 import { Button } from '@arco-design/web-react'
+import { LoginPage } from './components/LoginPage'
 
 const Login = () => {
   return (
-    <>
-    <Button type="primary" long>登录</Button>
-    </>
+    <LoginPage>
+      <Button type="primary" long>登录</Button>
+    </LoginPage>
   )
 }
 

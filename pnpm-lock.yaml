@@ -115,6 +115,9 @@ devDependencies:
   eslint:
     specifier: ^8.57.0
     version: 8.57.0
+  eslint-plugin-cypress:
+    specifier: ^3.2.0
+    version: 3.2.0(eslint@8.57.0)
   eslint-plugin-react-hooks:
     specifier: ^4.6.2
     version: 4.6.2(eslint@8.57.0)
@@ -5443,6 +5446,15 @@ packages:
       eslint: '*'
     dependencies:
       eslint: 8.57.0
+    dev: true
+
+  /eslint-plugin-cypress@3.2.0(eslint@8.57.0):
+    resolution: {integrity: sha512-HaxMz6BoU4ay+K4WrG9ZJC1NdX06FqSlAwtRDStjM0ORFT7zCNPNuRJ+kUPc17Rt2AMUBSqeD9L0zTR3uZhPpw==}
+    peerDependencies:
+      eslint: '>=7'
+    dependencies:
+      eslint: 8.57.0
+      globals: 13.24.0
     dev: true
 
   /eslint-plugin-es-x@7.6.0(eslint@8.57.0):

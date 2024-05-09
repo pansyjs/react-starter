@@ -1,12 +1,11 @@
 import React, { Suspense } from 'react';
-import { Spin } from 'antd';
+import { Spin } from '@arco-design/web-react'
 
 export const LazyLoad = (Comp: React.LazyExoticComponent<any>): React.ReactNode => {
   return (
     <Suspense
       fallback={
         <Spin
-          size="large"
           style={{
             display: "flex",
             alignItems: "center",

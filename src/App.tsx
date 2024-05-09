@@ -1,14 +1,14 @@
 import { BrowserRouter } from 'react-router-dom';
 import Router from '@/routers';
-import 'antd/dist/reset.css';
-import './global.less';
+import { ConfigProvider } from '@arco-design/web-react';
+import zhCN from '@arco-design/web-react/es/locale/zh-CN';
 
-function App() {
+export const App = () => {
   return (
-    <BrowserRouter>
-      <Router />
-    </BrowserRouter>
+    <ConfigProvider locale={zhCN}>
+      <BrowserRouter>
+        <Router />
+      </BrowserRouter>
+    </ConfigProvider>
   )
 }
-
-export default App

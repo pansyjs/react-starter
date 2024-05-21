@@ -52,5 +52,8 @@ export default defineConfig(({ command }) => {
         }
       }
     },
+    server: {
+      port: 8888,
+    }
   }
 })

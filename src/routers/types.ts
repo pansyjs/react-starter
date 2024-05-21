@@ -5,7 +5,7 @@ export interface Meta {
   key?: string;
   /* 页面标题 */
   title: string;
-  /* 权限吗 */
+  /* 权限码 */
   authority?: string;
 }
 

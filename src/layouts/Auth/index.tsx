@@ -1,12 +1,12 @@
 import { Outlet } from 'react-router-dom'
 import boxBg from '@/assets/svg/login-box-bg.svg'
-import classnames from '@pansy/classnames'
+import { clsx } from 'clsx'
 import styles from './index.module.less'
 
 
 export const AuthLayout = () => {
   return (
-    <div className={classnames(styles.login, 'relative w-full h-full px-4')}>
+    <div className={clsx(styles.login, 'relative w-full h-full px-4')}>
       <div className="flex items-center absolute right-4 top-4"></div>
 
       <div className="container relative h-full py-2 mx-auto sm:px-10">

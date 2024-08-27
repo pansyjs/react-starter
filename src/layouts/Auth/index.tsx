@@ -1,8 +1,8 @@
 import { Outlet } from 'react-router-dom'
 import boxBg from '@/assets/svg/login-box-bg.svg'
 import { clsx } from 'clsx'
+import Button from '@mui/material/Button'
 import styles from './index.module.less'
-
 
 export const AuthLayout = () => {
   return (
@@ -30,6 +30,7 @@ export const AuthLayout = () => {
               style={{ width: '100%' }}
             >
               <Outlet />
+              <Button variant="contained">Hello world</Button>
             </div>
           </div>
         </div>
